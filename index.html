@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Kochkin Daniil">
+  <meta name="copyright" content="unsplash.com">
+  <meta name="address" content="Russia, Karelia, Petrozavodsk">
+  <meta name="description" content="Custom page to search images with unsplash api">
+  <meta name="keywords" content="images, background, wallpaper, gallery, find images, search images">
+  <title>custom image-gallery</title>
+  <meta property="og:title" content="Search images">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1606819717115-9159c900370b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80">
+  <meta property="og:description" content="a pleasant way to look through images">
+  <meta property="og:url" content="dakochkin.ru/custom-image-gallery">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_EN">
+  <link rel="icon" href="assets/img/custom-image-galery.ico">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="header" class="header">
+    <div class="header__wrapper">
+      <img class="header__logo" src="assets/svg/custom-image-galery.svg" alt="app logo">
+      <h1 class="header__title">any image you want</h1>
+    </div>
+    <div class="header__search search">
+      <div class="search__input-wrapper">
+        <input class="search__input" type="text" placeholder="animal" autocomplete="off">
+        <button class="btn search__btn_clear">⨉</button>
+      </div>
+      <button class="btn search__btn search__btn_find">find</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__images-container">
+    </div>
+
+    <div class="main__msg main__msg_no-results">
+      <p>Try to find another word...</p>
+    </div>
+
+    <div class="main__msg main__msg_no-more-images">
+      <p>No more such images...</p>
+    </div>
+    
+    <div class="gallery">
+      <button class="btn no-bg-btn gallery__btn gallery__btn_close">⨉</button>
+      <img class="gallery__img" src="" alt="photo from unsplash">
+      <div class="gallery__btn-wrapper">
+        <button class="btn no-bg-btn gallery__btn gallery__btn_previous">◀</button>
+        <button class="btn no-bg-btn gallery__btn gallery__btn_next">▶</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a class="btn footer__btn footer__btn_to-top" href="#header">to top</a>
+    <button class="btn footer__btn footer__btn_load-more">load more</button>
+    <a class="link footer__link" href="https://t.me/jaysun0" target="_blank">
+      <img src="assets/svg/telegram-icon.svg" alt="telegram icon">
+    </a>
+  </footer>
+  <script src="js/index.js"></script>
+</body>
+</html>
