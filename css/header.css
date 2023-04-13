@@ -9,7 +9,7 @@
 }
 
 .header__wrapper {
-    padding: 1rem;
+    padding: 10px 1rem;
     margin-right: 1.5rem;
 }
 
@@ -17,7 +17,7 @@
     margin-right: 0.5rem;
     width: 40px;
     transform: translateY(7px);
-    transition: transform calc(var(--fast-transition) * 3);
+    transition: transform calc(var(--transition-fast) * 3);
 }
 .header__logo:hover {
     transform: translateY(7px) rotateZ(360deg);
@@ -50,12 +50,12 @@
     font-weight: bold;
     color: var(--black-color);
     background-color: transparent;
-    transition: transform var(--fast-transition);
+    transition: transform var(--transition-fast);
     border: none;
 }
 .search__btn_clear:hover {
     background-color: transparent;
-    transform: scale(1.2) rotateZ(90deg);
+    transform: rotateZ(90deg);
     border: none;
 }
 

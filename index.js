@@ -13,8 +13,8 @@ const dom = {
   galleryNextBtn: document.querySelector('.gallery__btn_next'),
   galleryPreviousBtn: document.querySelector('.gallery__btn_previous'),
 
-  toTopBtn: document.querySelector('.footer__btn_to-top'),
-  loadMoreBtn: document.querySelector('.footer__btn_load-more'),
+  toTopBtn: document.querySelector('.main__btn_to-top'),
+  loadMoreBtn: document.querySelector('.main__btn_load-more'),
   msgNoResults: document.querySelector('.main__msg_no-results'),
   msgNoMoreImages: document.querySelector('.main__msg_no-more-images'),
 }

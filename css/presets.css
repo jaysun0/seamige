@@ -25,7 +25,8 @@
     --border-radius: 7px;
 
     --transition: 300ms;
-    --fast-transition: 100ms;
+    --transition-fast: 150ms;
+    --transition-fast-2: 100ms;
 }
 
 a {
@@ -52,28 +53,21 @@ body {
 }
 
 .btn {
+    padding: 4px 15px;
     font-size: 1.2rem;
-    padding: 0.3em 1em;
-
     font-family: 'OpenSans', 'Arial', sans-serif;
     font-weight: bold;
+
     background-color: var(--black-color);
     color: var(--dark-accent-color);
     letter-spacing: 2px;
-    border: none;
-    cursor: pointer;
+    border: 3px solid var(--black-color);
     border-radius: var(--border-radius);
-    transition: transform var(--fast-transition);
+    cursor: pointer;
+    transition: color var(--transition-fast-2);
 }
 .btn:hover {
-    transform: skew(-8deg, 0deg);
-}
-
-.link {
-    transition: transform var(--fast-transition);
-}
-.link:hover {
-    transform: scale(1.1);
+    color: #fff;
 }
 
 .no-bg-btn {
@@ -81,9 +75,5 @@ body {
     color: var(--black-color);
     background-color: transparent;
     border: none;
-    transition: transform var(--fast-transition);
-}
-.no-bg-btn:hover {
-    transform: scale(1.15);
-    border: none;
+    transition: transform var(--transition-fast);
 }

@@ -7,18 +7,15 @@
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     background: linear-gradient(0deg, var(--dark-accent-color), var(--dark-color));
 }
 
-.footer__btn {
-    font-size: 15px;
-    margin: 0 1em;
-}
-
-.footer__link {
-    width: 30px;
-    margin: 0 1em;
+.footer__contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
