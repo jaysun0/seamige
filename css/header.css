@@ -57,6 +57,7 @@
     background-color: transparent;
     transform: rotateZ(90deg);
     border: none;
+    color: var(--black-color);
 }
 
 .search__btn_find {

@@ -52,6 +52,17 @@ body {
     background: var(--light-color);
 }
 
+.link {
+    padding: 10px;
+    padding-bottom: 5px;
+    border: none;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-fast);
+}
+.link:hover {
+    background-color: var(--light-accent-color);
+}
+
 .btn {
     padding: 4px 15px;
     font-size: 1.2rem;
@@ -76,4 +87,8 @@ body {
     background-color: transparent;
     border: none;
     transition: transform var(--transition-fast);
+}
+
+.icon {
+    width: 30px;
 }
