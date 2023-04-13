@@ -1,0 +1,48 @@
+.main {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 4rem 0 8rem 0;
+}
+
+.main__images-container {
+    padding: 0 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.main__image-wrapper {
+    position: relative;
+    width: 440px;
+    height: 440px;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.main__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: transform var(--transition);
+    transition-delay: 50ms;
+}
+
+.main__image:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.main__msg {
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 2em;
+}
+
+.main__msg_no-results,
+.main__msg_no-more-images {
+    display: none;
+}
