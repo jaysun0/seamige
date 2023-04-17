@@ -39,7 +39,7 @@
     </div>
     <div class="main__controls">
       <button class="btn main__btn main__btn_load-more">more images</button>
-      <a class="btn main__btn main__btn_to-top" href="#header">to top</a>
+      <a class="btn main__btn main__btn_to-top" href="#header">to top ▲</a>
     </div>
 
     <div class="main__msg main__msg_no-results">
@@ -51,9 +51,14 @@
     </div>
     
     <div class="gallery">
-      <button class="btn no-bg-btn gallery__btn gallery__btn_close">⨉</button>
+      <div class="gallery__btn-wrapper gallery__btn-wrapper_close">
+        <a class="btn no-bg-btn gallery__btn gallery__btn_download">download</a>
+        <button class="btn no-bg-btn gallery__btn gallery__btn_close">⨉</button>
+      </div>
+
       <img class="gallery__img" src="" alt="photo from unsplash">
-      <div class="gallery__btn-wrapper">
+
+      <div class="gallery__btn-wrapper gallery__btn-wrapper_direction">
         <button class="btn no-bg-btn gallery__btn gallery__btn_previous">◀</button>
         <button class="btn no-bg-btn gallery__btn gallery__btn_next">▶</button>
       </div>

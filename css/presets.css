@@ -19,7 +19,6 @@
     --dark-color: #7e796d;
     --dark-accent-color: #beb8a4;
     --black-color: #111;
-    --shadow: 3px 3px 6px #555;
 
     --border-radius-large: 20px;
     --border-radius: 7px;
@@ -27,6 +26,8 @@
     --transition: 300ms;
     --transition-fast: 150ms;
     --transition-fast-2: 100ms;
+
+    --shadow: 0px 3px 9px #555;
 }
 
 a {
