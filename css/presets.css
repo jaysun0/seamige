@@ -93,3 +93,7 @@ body {
 .icon {
     width: 30px;
 }
+
+.image-to-download__container {
+    diplay: none;
+}

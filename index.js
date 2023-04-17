@@ -9,6 +9,7 @@ const dom = {
 
   gallery: document.querySelector('.gallery'),
   galleryImg: document.querySelector('.gallery__img'),
+  galleryDownloadBtn: document.querySelector('.gallery__btn_download'),
   galleryCloseBtn: document.querySelector('.gallery__btn_close'),
   galleryNextBtn: document.querySelector('.gallery__btn_next'),
   galleryPreviousBtn: document.querySelector('.gallery__btn_previous'),
@@ -112,6 +113,21 @@ function openGallery(index) {
   dom.gallery.style.display = 'flex';
   dom.galleryImg.dataset.index = index;
   dom.galleryImg.setAttribute('src', state.imageLinks[index]);
+  dom.galleryDownloadBtn.dataset['link'] = state.imageLinks[index];
+}
+
+async function downloadImage() {
+  const imageData = await fetch(dom.galleryDownloadBtn.dataset['link']);
+  const imageBlob = await imageData.blob();
+  const imageUrl = URL.createObjectURL(imageBlob);
+
+  const partOfTheNameArray = imageUrl.split('-');
+  const partOfTheName = partOfTheNameArray[partOfTheNameArray.length - 1];
+  const linkToDownload = document.querySelector('.image-to-download__link');
+
+  linkToDownload.href = imageUrl;
+  linkToDownload.download = `seamige-${partOfTheName}.jpg`;
+  linkToDownload.click();
 }
 
 
@@ -134,12 +150,15 @@ function nextImage(direction) {
   }
 
   dom.galleryImg.setAttribute('src', state.imageLinks[next]);
+  dom.galleryDownloadBtn.dataset['link'] = state.imageLinks[next];
   dom.galleryImg.dataset.index = next;
 }
 
 
 
 /****** EVENT LISTENERS ******/
+dom.galleryDownloadBtn.addEventListener('click', downloadImage);
+
 //search input
 dom.findBtn.addEventListener('click', processQuery);
 
