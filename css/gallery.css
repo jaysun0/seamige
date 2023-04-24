@@ -6,7 +6,7 @@
     z-index: 10;
     padding: 1rem 3rem;
 
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 

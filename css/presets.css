@@ -97,3 +97,7 @@ body {
 .image-to-download__container {
     diplay: none;
 }
+
+.hidden {
+    display: none !important;
+}

@@ -37,14 +37,10 @@
 }
 
 .main__msg {
+    padding-bottom: 6rem;
+    transform: translateY(-4rem);
     font-size: 2rem;
     text-align: center;
-    padding-top: 2em;
-}
-
-.main__msg_no-results,
-.main__msg_no-more-images {
-    display: none;
 }
 
 .main__controls {
