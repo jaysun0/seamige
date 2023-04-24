@@ -54,7 +54,7 @@ function createImg(url, width, height, index) {
   img.setAttribute('alt', 'photo from unsplash');
   img.setAttribute('src', url);
   img.classList.add('main__image');
-  img.dataset.index = imageIndex;
+  img.dataset.index = `${imageIndex}`;
   width < height ? img.style.width = '100%' : img.style.height = '100%';
   img.addEventListener('click', () => openGallery(imageIndex));
 
@@ -74,9 +74,13 @@ async function getImages(query) {
     if (data.results.length) {
       dom.toTopBtn.style.display = 'block';
       data.results.forEach((item, ind) => {
-        const url = item.urls.regular;
-        state.imageLinks.push(url);
-        createImg(url, item.width, item.height, ind);
+        const regular = item.urls.regular;
+        const full = item.urls.full;
+        state.imageLinks.push({
+          regular,
+          full
+        });
+        createImg(regular, item.width, item.height, ind);
       });
     } else {
       dom.toTopBtn.style.display = 'none';
@@ -94,8 +98,10 @@ function getMoreImages(){
       .then(data => {
         if (data.results.length) {
           data.results.forEach((item, ind) => {
-            const url = item.urls.regular;
-            state.imageLinks.push(url);
+            state.imageLinks.push({
+              regular: item.urls.regular,
+              full: item.urls.full,
+            });
             createImg(url, item.width, item.height, ind);
           });
         } else {
@@ -112,8 +118,8 @@ function openGallery(index) {
   dom.gallery.style.top = `${window.scrollY}px`;
   dom.gallery.style.display = 'flex';
   dom.galleryImg.dataset.index = index;
-  dom.galleryImg.setAttribute('src', state.imageLinks[index]);
-  dom.galleryDownloadBtn.dataset['link'] = state.imageLinks[index];
+  dom.galleryImg.setAttribute('src', state.imageLinks[index].regular);
+  dom.galleryDownloadBtn.dataset['link'] = state.imageLinks[index].full;
 }
 
 async function downloadImage() {
@@ -149,9 +155,9 @@ function nextImage(direction) {
     if (next === -1) next = state.imageLinks.length - 1; 
   }
 
-  dom.galleryImg.setAttribute('src', state.imageLinks[next]);
-  dom.galleryDownloadBtn.dataset['link'] = state.imageLinks[next];
-  dom.galleryImg.dataset.index = next;
+  dom.galleryImg.setAttribute('src', state.imageLinks[next].regular);
+  dom.galleryDownloadBtn.dataset['link'] = state.imageLinks[next].full;
+  dom.galleryImg.dataset.index = `${next}`;
 }
 
 
